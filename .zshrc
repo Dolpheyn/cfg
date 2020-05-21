@@ -8,7 +8,7 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export ZSH="/home/dolpheyn/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export TERM=xterm-256color # For tmux color
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -27,8 +27,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=/home/dolpheyn/.config/composer/vendor/laravel/installer/bin:$PATH
-export PATH=/home/dolpheyn/.cargo/bin:$PATH
+export PATH=$HOME/.config/composer/vendor/laravel/installer/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
