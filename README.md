@@ -1,4 +1,4 @@
 # cfg
 Config files
 
-[vim setup](https://github.com/ivanceras/rust-vim-setup)
+[vim setup](https://github.com/dolpheyn/rust-vim-setup)
