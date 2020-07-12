@@ -1,5 +1,6 @@
 syntax on
 
+set nocompatible
 set noerrorbells
 set number	
 set linebreak
@@ -26,6 +27,7 @@ noremap <Space> <Nop>
 map <Space> <Leader>
 
 nnoremap <Leader>] :YcmCompleter GoTo<CR>
+"-----------\KEY MAPS-----------
 
 
 "-----------PLUGINS--------------
@@ -33,14 +35,55 @@ execute pathogen#infect()
 
 filetype plugin indent on
 
-" YouCompleteMe cfg
-let g:ycm_rust_src_path="/home/dolpheyn/dev/rust/src"
-" end YouCompleteMe cfg
+" Colourscheme -----------------------------
+set background=dark 
+colorscheme gruvbox
+" \Colourscheme -----------------------------
 
-" NERDTree cfg
+" Ctrl P cfg -----------------------------
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+" \Ctrl P cfg -----------------------------
+
+" YouCompleteMe cfg -----------------------------
+let g:ycm_rust_src_path="/home/dolpheyn/dev/rust/src"
+" \YouCompleteMe cfg -----------------------------
+
+" NERDTree cfg-----------------------------
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 
 nmap <silent> <C-t> :NERDTreeToggle<CR>
 nmap <silent> <F2> :NERDTreeFind<CR>
-" end NERDTree cfg
+" \NERDTree cfg-----------------------------
+
+" vimwiki cfg-----------------------------
+let g:vimwiki_global_ext = 0
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+			\ 'syntax': 'markdown', 'ext': '.md'}]
+" \vimwiki cfg-----------------------------
+
+" RustFmt cfg-----------------------------
+let g:rustfmt_autosave = 1
+" \RustFmt cfg-----------------------------
+
+" Vue cfg-----------------------------
+let g:vue_pre_processors = []
+" \Vue cfg-----------------------------
+
+" Typescript cfg-----------------------------
+let g:typescript_compiler_binary = 'tsc'
+" \Typescript cfg-----------------------------
+
+" ALE cfg-----------------------------
+let g:ale_fixers = {
+ \ 'javascript': ['eslint'],
+ \ 'vue': ['eslint'],
+ \ 'typescript': ['tslint']
+ \ }
+let g:ale_sign_error = '❌'
+let g:ale_completion_tsserver_autoimport = 1
+let g:ale_sign_warning = '⚠️'
+let g:ale_fix_on_save = 1
+" \ALE cfg-----------------------------
+
+"----------\PLUGINS--------------
