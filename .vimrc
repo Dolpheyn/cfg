@@ -21,12 +21,14 @@ set ruler
 set undolevels=1000	
 set backspace=indent,eol,start	
 set mouse=a
+set nowrap
 
 "-----------KEY MAPS------------
 noremap <Space> <Nop>
 map <Space> <Leader>
 
 nnoremap <Leader>] :YcmCompleter GoTo<CR>
+nnoremap <Leader>r_ :.s/([^)]*)/\=substitute(submatch(0),' ','_','g')/<CR>
 "-----------\KEY MAPS-----------
 
 
@@ -60,6 +62,7 @@ nmap <silent> <F2> :NERDTreeFind<CR>
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/vimwiki/',
 			\ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_markdown_link_ext = 1
 " \vimwiki cfg-----------------------------
 
 " RustFmt cfg-----------------------------
