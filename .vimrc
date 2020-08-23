@@ -60,9 +60,13 @@ nmap <silent> <F2> :NERDTreeFind<CR>
 
 " vimwiki cfg-----------------------------
 let g:vimwiki_global_ext = 0
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-			\ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{
+			\ 'path': '~/vimwiki/',
+			\ 'syntax': 'markdown', 
+			\ 'ext': '.md'
+			\ }]
 let g:vimwiki_markdown_link_ext = 1
+let g:vimwiki_ext2syntax = {}
 " \vimwiki cfg-----------------------------
 
 " RustFmt cfg-----------------------------
