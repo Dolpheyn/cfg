@@ -29,11 +29,11 @@ map <Space> <Leader>
 noremap <leader>s :grep
 
 " To go to next and previous search result location
-noremap <leader>cn :cnext<CR>
-noremap <leader>cp :cprevious<CR>
+noremap <Silent> <leader>cn :cnext<CR>
+noremap <Silent> <leader>cp :cprevious<CR>
 
-nnoremap <Leader>] :YcmCompleter GoTo<CR>
-nnoremap <Leader>r_ :.s/([^)]*)/\=substitute(submatch(0),' ','_','g')/<CR>
+nnoremap <Silent> <Leader>] :YcmCompleter GoTo<CR>
+nnoremap <Silent> <Leader>r_ :.s/([^)]*)/\=substitute(submatch(0),' ','_','g')/<CR>
 "-----------\KEY MAPS-----------
 
 
