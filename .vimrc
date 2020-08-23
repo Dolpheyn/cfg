@@ -26,6 +26,11 @@ set nowrap
 "-----------KEY MAPS------------
 noremap <Space> <Nop>
 map <Space> <Leader>
+noremap <leader>s :grep
+
+" To go to next and previous search result location
+noremap <leader>cn :cnext<CR>
+noremap <leader>cp :cprevious<CR>
 
 nnoremap <Leader>] :YcmCompleter GoTo<CR>
 nnoremap <Leader>r_ :.s/([^)]*)/\=substitute(submatch(0),' ','_','g')/<CR>
@@ -93,4 +98,10 @@ let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
 " \ALE cfg-----------------------------
 
-"----------\PLUGINS--------------
+"----------\PLUGINS--------------"
+
+" From https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim#L104
+if executable('rg')
+	set grepprg=rg\ --no-heading\ --vimgrep
+	set grepformat=%f:%l:%c:%m
+endif
