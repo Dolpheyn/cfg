@@ -23,7 +23,7 @@ set backspace=indent,eol,start
 set mouse=a
 set nowrap
 
-"-----------KEY MAPS------------
+" KEY MAPS---------------------------------------------------------------------
 noremap <Space> <Nop>
 map <Space> <Leader>
 noremap <leader>s :grep
@@ -34,36 +34,36 @@ noremap <silent> <leader>cp :cprevious<CR>
 
 nnoremap <silent> <Leader>] :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>r_ :.s/([^)]*)/\=substitute(submatch(0),' ','_','g')/<CR>
-"-----------\KEY MAPS-----------
+" \KEY MAPS--------------------------------------------------------------------
 
 
-"-----------PLUGINS--------------
+" PLUGINS----------------------------------------------------------------------
 execute pathogen#infect()
 
 filetype plugin indent on
 
-" Colourscheme -----------------------------
+" Colourscheme ------------------------
 set background=dark 
 colorscheme gruvbox
-" \Colourscheme -----------------------------
+" \Colourscheme -----------------------
 
-" Ctrl P cfg -----------------------------
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-" \Ctrl P cfg -----------------------------
+" Ctrl P cfg --------------------------
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|target'
+" \Ctrl P cfg -------------------------
 
-" YouCompleteMe cfg -----------------------------
-let g:ycm_rust_src_path="/home/dolpheyn/dev/rust/src"
-" \YouCompleteMe cfg -----------------------------
+" YouCompleteMe cfg -------------------
+let g:ycm_rust_src_path = '/home/dolpheyn/dev/rust/src'
+" \YouCompleteMe cfg ------------------
 
-" NERDTree cfg-----------------------------
+" NERDTree cfg-------------------------
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 
 nmap <silent> <C-t> :NERDTreeToggle<CR>
 nmap <silent> <F2> :NERDTreeFind<CR>
-" \NERDTree cfg-----------------------------
+" \NERDTree cfg------------------------
 
-" vimwiki cfg-----------------------------
+" vimwiki cfg--------------------------
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{
 			\ 'path': '~/vimwiki/',
@@ -72,21 +72,21 @@ let g:vimwiki_list = [{
 			\ }]
 let g:vimwiki_markdown_link_ext = 1
 let g:vimwiki_ext2syntax = {}
-" \vimwiki cfg-----------------------------
+" \vimwiki cfg-------------------------
 
-" RustFmt cfg-----------------------------
+" RustFmt cfg--------------------------
 let g:rustfmt_autosave = 1
-" \RustFmt cfg-----------------------------
+" \RustFmt cfg-------------------------
 
-" Vue cfg-----------------------------
+" Vue cfg------------------------------
 let g:vue_pre_processors = []
 " \Vue cfg-----------------------------
 
-" Typescript cfg-----------------------------
+" Typescript cfg-----------------------
 let g:typescript_compiler_binary = 'tsc'
-" \Typescript cfg-----------------------------
+" \Typescript cfg----------------------
 
-" ALE cfg-----------------------------
+" ALE cfg------------------------------
 let g:ale_fixers = {
  \ 'javascript': ['eslint'],
  \ 'vue': ['eslint'],
@@ -98,7 +98,7 @@ let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
 " \ALE cfg-----------------------------
 
-"----------\PLUGINS--------------"
+" \PLUGINS---------------------------------------------------------------------
 
 " From https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim#L104
 if executable('rg')
