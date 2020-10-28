@@ -17,7 +17,7 @@ set autoindent
 set smartindent	
 set smarttab	
 set tabstop=2 softtabstop=2 expandtab
-set shiftwidth=4	
+set shiftwidth=2
 set ruler	
 set undolevels=1000	
 set backspace=indent,eol,start	
@@ -247,6 +247,9 @@ if executable('rg')
 	set grepformat=%f:%l:%c:%m
 endif
 
+" https://www.reddit.com/r/neovim/comments/bjuufn/does_anyone_have_experience_configuring_neovim/
+autocmd BufReadPost,BufNewFile *.vue setlocal filetype=vue
+
 " COC------------------------
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -255,7 +258,6 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " \COC-----------------------
 " \Scripts--------------------------------------------------------------------
 
