@@ -51,16 +51,18 @@ call plug#begin()
 " Visuals/Non-language idk, tools?
 Plug 'morhetz/gruvbox'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'luochen1990/rainbow'
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Language tings, LSP, Fixers, Linters, Filetypes etc
 " Plug 'w0rp/ale'
-Plug 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
 " Plug 'Valloric/YouCompleteMe'
+Plug 'leafOfTree/vim-vue-plugin'
 Plug 'leafgarland/typescript-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -167,8 +169,16 @@ nnoremap <silent> <Leader>r_ :.s/([^)]*)/\=substitute(submatch(0),' ','_','g')/<
 " Plugins----------------------------------------------------------------------
 filetype plugin indent on
 
+" Vim-vue-plugin-----------------------
+"let g:vim_vue_plugin_lad_full_syntax=1
+let g:vim_vue_plugin_use_scss=1
+let g:vim_vue_plugin_highlight_vue_attr=1
+let g:vim_vue_plugin_highlight_vue_keyword=1
+" \Vim-vue-plugin----------------------
 " Colourscheme ------------------------
 set background=dark 
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 " \Colourscheme -----------------------
 
@@ -178,7 +188,7 @@ au FileType vue     let b:AutoPairs = AutoPairsDefine({'\w\zs<': '>'})
 " \Auto Pairs cfg ---------------------
 
 " Ctrl P cfg --------------------------
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|target\|dist'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|target\|dist\|__pycache__'
 " \Ctrl P cfg -------------------------
 
 " YouCompleteMe cfg -------------------
@@ -218,8 +228,11 @@ let g:vue_pre_processors = []
 let g:typescript_compiler_binary = 'tsc'
 " \Typescript cfg----------------------
 
-" ALE cfg------------------------------
+" Rainbow cfg--------------------------
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+" \Rainbow cfg-------------------------
 
+" ALE cfg------------------------------
 " Get typescript lint in vue with tsserver
 " let g:ale_linter_aliases = {'vue': 'typescript'}
 " let g:ale_linters = {
@@ -249,6 +262,10 @@ endif
 
 " https://www.reddit.com/r/neovim/comments/bjuufn/does_anyone_have_experience_configuring_neovim/
 autocmd BufReadPost,BufNewFile *.vue setlocal filetype=vue
+
+
+" No rainbow for markdown pls
+autocmd FileType vimwiki :RainbowToggleOff
 
 " COC------------------------
 function! s:check_back_space() abort
