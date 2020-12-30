@@ -163,6 +163,9 @@ nnoremap <silent><nowait> cp  :<C-u>CocListResume<CR>
 " For my VimWiki file names
 " It replaces all spaces within a `( )` with underscores
 nnoremap <silent> <Leader>r_ :.s/([^)]*)/\=substitute(submatch(0),' ','_','g')/<CR>
+
+" MarkdownToC
+nmap <leader>toc :call MarkdownToC()<CR>
 " \Key Maps--------------------------------------------------------------------
 
 
@@ -276,6 +279,11 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 " \COC-----------------------
+
+" Function to insert table of content in a markdown
+function! MarkdownToC()
+  r~/.config/nvim/md/toc.txt
+endfunction
 " \Scripts--------------------------------------------------------------------
 
 

@@ -1,0 +1,21 @@
+{
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualText": true,
+
+    "list.source.symbols.excludes": ["node_modules", "dist"],
+    "tsserver.trace.server": "verbose",
+
+    "vetur.trace.server": "verbose",
+    "vetur.validation.templateProps": true,
+
+    "eslint.packageManager": "npm",
+    "eslint.run": "onSave",
+    "eslint.autoFixOnSave": true,
+    "eslint.filetypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue"
+    ]
+}
