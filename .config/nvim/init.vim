@@ -142,7 +142,7 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> ca  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> cd  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
 nnoremap <silent><nowait> ce  :<C-u>CocList extensions<cr>
 " Show commands.
