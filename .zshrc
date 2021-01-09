@@ -29,8 +29,44 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=$HOME/.config/composer/vendor/laravel/installer/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
+export LD_LIBRARY_PATH=/usr/lib
+export PATH=/home/dolpheyn/.config/composer/vendor/laravel/installer/bin:$PATH
+export PATH=/home/dolpheyn/.cargo/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+export PATH=/home/dolpheyn/scripts:$PATH
+export PATH=/home/dolpheyn/anaconda3/bin:$PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias wiki="~/vimwiki && git add . && git commit -m 'notes' && git push"
+alias v="nvim"
+alias master="git checkout master"
+
+# Git
+alias ga="git add"
+alias gap="git add --patch"
+alias gc="git checkout"
+alias gcb="git checkout -b"
+alias gs="git status"
+alias gsv="git status -v"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/dolpheyn/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/dolpheyn/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/dolpheyn/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/dolpheyn/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
