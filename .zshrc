@@ -8,11 +8,13 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export ZSH="$HOME/.oh-my-zsh"
-export TERM=xterm-256color # For tmux color
+export ZSH="/home/dolpheyn/.oh-my-zsh"
+# export TERM=xterm-256color # For tmux color
+export EDITOR=/usr/bin/nvim
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
