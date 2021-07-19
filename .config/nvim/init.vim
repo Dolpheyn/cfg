@@ -55,6 +55,9 @@ Plug 'luochen1990/rainbow'
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Language tings, LSP, Fixers, Linters, Filetypes etc
 " Plug 'w0rp/ale'
