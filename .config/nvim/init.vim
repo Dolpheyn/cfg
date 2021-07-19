@@ -161,6 +161,12 @@ nnoremap <silent><nowait> ck  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> cp  :<C-u>CocListResume<CR>
 
+" Mappings for Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 " \COC-----------------------
 
 " For my VimWiki file names
