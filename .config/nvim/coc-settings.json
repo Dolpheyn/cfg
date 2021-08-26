@@ -27,6 +27,13 @@
         "initializationOptions": {
           "storagePath": "/tmp/intelephense"
         }
+      },
+      "solidity": {
+        "command": "/usr/local/bin/solc",
+        "args": ["--lsp"],
+        "trace.server": "verbose",
+        "rootPatterns": [".git/"],
+        "filetypes": ["solidity"]
       }
     }
 }

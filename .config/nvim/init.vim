@@ -1,28 +1,29 @@
 " General---------------------------------------------------------------------
 syntax on
 
-set nocompatible
-set noerrorbells
-set number	
-set linebreak
-set showbreak=+++
-set textwidth=100
-set showmatch	
-set noswapfile
+set autoindent	
+set backspace=indent,eol,start	
+set colorcolumn=80
 set hlsearch	
-set smartcase	
 set ignorecase	
 set incsearch	
-set autoindent	
+set linebreak
+set mouse=a
+set nocompatible
+set noerrorbells
+set noswapfile
+set nowrap
+set number	
+set ruler	
+set shiftwidth=2
+set showbreak=+++
+set showmatch	
+set smartcase	
 set smartindent	
 set smarttab	
 set tabstop=2 softtabstop=2 expandtab
-set shiftwidth=2
-set ruler	
+set textwidth=80
 set undolevels=1000	
-set backspace=indent,eol,start	
-set mouse=a
-set nowrap
 
 let g:python3_host_prog= '/usr/bin/python3'
 
@@ -64,6 +65,7 @@ Plug 'nvim-telescope/telescope.nvim'
 " Plug 'posva/vim-vue'
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'tomlion/vim-solidity'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'leafgarland/typescript-vim'
