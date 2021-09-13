@@ -15,6 +15,7 @@ set noswapfile
 set nowrap
 set number	
 set ruler	
+set scrolloff=20
 set shiftwidth=2
 set showbreak=+++
 set showmatch	
