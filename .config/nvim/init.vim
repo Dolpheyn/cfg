@@ -1,5 +1,5 @@
 " General---------------------------------------------------------------------
-syntax on
+syntax enable
 
 set autoindent	
 set backspace=indent,eol,start	
@@ -52,7 +52,6 @@ call plug#begin()
 
 " Visuals/Non-language idk, tools?
 Plug 'morhetz/gruvbox'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'luochen1990/rainbow'
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
@@ -60,12 +59,13 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'mattn/webapi-vim'
 
 " Language tings, LSP, Fixers, Linters, Filetypes etc
 " Plug 'w0rp/ale'
 " Plug 'posva/vim-vue'
 Plug 'chrisbra/csv.vim'
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
 Plug 'tomlion/vim-solidity'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'leafOfTree/vim-vue-plugin'
@@ -82,7 +82,7 @@ call plug#end()
 " Key Maps---------------------------------------------------------------------
 noremap <Space> <Nop>
 map <Space> <Leader>
-noremap <leader>s :grep
+"noremap <leader>s :grep
 
 " To go to next and previous search result location
 noremap <silent> <leader>cn :cnext<CR>
@@ -165,8 +165,8 @@ nnoremap <silent><nowait> ck  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> cp  :<C-u>CocListResume<CR>
 
 " Mappings for Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>s <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
@@ -196,15 +196,6 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 " \Colourscheme -----------------------
-
-" Auto Pairs cfg ----------------------
-" Auto insert for <> pair in vue
-au FileType vue     let b:AutoPairs = AutoPairsDefine({'\w\zs<': '>'})
-" \Auto Pairs cfg ---------------------
-
-" Ctrl P cfg --------------------------
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|target\|dist\|__pycache__'
-" \Ctrl P cfg -------------------------
 
 " YouCompleteMe cfg -------------------
 let g:ycm_rust_src_path = '/home/dolpheyn/dev/rust/src'
@@ -247,25 +238,6 @@ let g:typescript_compiler_binary = 'tsc'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 " \Rainbow cfg-------------------------
 
-" ALE cfg------------------------------
-" Get typescript lint in vue with tsserver
-" let g:ale_linter_aliases = {'vue': 'typescript'}
-" let g:ale_linters = {
-"  \ 'javascript': ['eslint'],
-"  \ 'vue': ['eslint', 'tsserver'],
-"  \ 'typescript': ['eslint', 'tsserver']
-"  \ }
-" let g:ale_fixers = {
-"  \ 'javascript': ['eslint'],
-"  \ 'vue': ['eslint'],
-"  \ 'typescript': ['tslint', 'eslint']
-"  \ }
-" let g:ale_sign_error = '❌'
-" let g:ale_completion_tsserver_autoimport = 1
-" let g:ale_sign_warning = '⚠️'
-" let g:ale_fix_on_save = 1
-" \ALE cfg-----------------------------
-
 " \PLUGINS--------------------------------------------------------------------
 
 " Scripts---------------------------------------------------------------------
@@ -297,6 +269,3 @@ function! MarkdownToC()
   r~/.config/nvim/md/toc.txt
 endfunction
 " \Scripts--------------------------------------------------------------------
-
-
-
