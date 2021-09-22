@@ -1,4 +1,6 @@
 {
+    "http.proxy": "http://192.168.49.1:8000",
+
     "diagnostic.checkCurrentLine": true,
     "diagnostic.virtualText": true,
 
